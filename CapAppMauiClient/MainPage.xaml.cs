@@ -16,14 +16,14 @@ public partial class MainPage : ContentPage
 		_dataService = dataService;
 	}
 
-	protected async override void OnAppearing()
+	protected async override void OnAppearing()  //uses data service interface to perform/display all DB content
 	{
 		base.OnAppearing();
 
 		collectionView.ItemsSource = await _dataService.GetAllCapAppsAsync();
 	}
 
-	async void OnAddCapAppClicked(object sender, EventArgs e)
+	async void OnAddCapAppClicked(object sender, EventArgs e)  //onclick redirects to content creation page
 	{
 		Debug.WriteLine("---> Add button clicked");
 
@@ -35,7 +35,7 @@ public partial class MainPage : ContentPage
 		await Shell.Current.GoToAsync(nameof(ManageCapAppPage), navigationParameter);
 	}
 
-	async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+	async void OnSelectionChanged(object sender, SelectionChangedEventArgs e)  //onclick signal content was updated and redirects to main
 	{
 		Debug.WriteLine("---> Item changed clicked!");
 

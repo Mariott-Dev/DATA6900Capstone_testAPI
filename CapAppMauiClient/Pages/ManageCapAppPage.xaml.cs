@@ -23,7 +23,7 @@ public partial class ManageCapAppPage : ContentPage
 		}
 	}
 
-	public ManageCapAppPage(IRestDataService dataService)
+	public ManageCapAppPage(IRestDataService dataService)  //ensures data is bound to approriate instance of data object
 	{
 		InitializeComponent();
 
